@@ -40,28 +40,28 @@ namespace Gráfok
             socialNetwork.AddEdge(janet, peter);
 
             // Szélességi bejárás
-            Console.WriteLine("BFS:");
+            Console.WriteLine("BFS Zack-től kezdve:");
             socialNetwork.BFS(zack, Console.WriteLine);
 
             // Mélységi bejárás
-            Console.WriteLine("\nDFS:");
+            Console.WriteLine("\nDFS Zack-től kezdve:");
             socialNetwork.DFS(zack, Console.WriteLine);
 
             // Feliratkozás az eseményre és élek kiírása
             socialNetwork.EdgeAdded += (sender, e) =>
             {
-                Console.WriteLine($"\nEdge added: {e.NodeA} -> {e.NodeB}");
+                Console.WriteLine($"\nÉl hozzáadva: {e.NodeA} -> {e.NodeB}");
             };
 
             // Ismeretség fokának kiírása
             int jg = socialNetwork.DegreeOfConnection(janet, gerald);
-            Console.WriteLine($"\nDegree of connection between Janet and Gerald: {jg}");
+            Console.WriteLine($"\nA kapcsolat foka Janet és Gerald között: {jg}");
 
             // Esemény kiváltása
             socialNetwork.AddEdge(janet, gerald);
 
             jg = socialNetwork.DegreeOfConnection(janet, gerald);
-            Console.WriteLine($"\nDegree of connection between Janet and Gerald: {jg}");
+            Console.WriteLine($"\nA kapcsolat foka Janet és Gerald között: {jg}");
 
             Console.ReadLine();
         }

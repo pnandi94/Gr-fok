@@ -148,14 +148,14 @@ namespace Gráfok
             }
 
             // Ha nem található út
-            Console.WriteLine($"No connection found between {startNode} and {endNode}");
+            Console.WriteLine($"Nincs kapcsolat {startNode} és {endNode} között");
             return -1;
         }
 
         // Útvonal kiírása
         private void PrintPath(T startNode, T endNode, Dictionary<T, int> distances)
         {
-            Console.Write($"\nPath from {startNode} to {endNode}: ");
+            Console.Write($"\nAz útvonal {startNode} és {endNode} között: ");
             T current = endNode;
 
             while (!current.Equals(startNode))
@@ -174,16 +174,5 @@ namespace Gráfok
             Console.WriteLine(startNode);
         }
 
-    }
-
-    // Személy osztály
-    public class Person
-    {
-        public string Name { get; set; }
-
-        public override string ToString()
-        {
-            return Name;
-        }
     }
 }
